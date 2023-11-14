@@ -6,3 +6,12 @@
     height: 100vh;
     overflow: scroll;
 }
+.content_area{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.content_item{
+    width: 90%;
+}
