@@ -1,17 +1,42 @@
+html,body{
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
 .main_body{
     border:1px solid black;
-    margin: 0 auto;
     max-width: 500px;
-    width: auto;
+    width: 100vw;
     height: 100vh;
     overflow: scroll;
+    position: relative;
 }
 .content_area{
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+    gap: 40px;
 }
 .content_item{
     width: 90%;
+}
+.main_body h1{text-align: center;}
+.music_btn{
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    width: 50px;
+    height: 24px;
+    border: 1px solid #1216c7;
+    color: #1216c7;
+    font-weight: bold;
+    background: transparent;
 }
