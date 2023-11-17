@@ -3,40 +3,38 @@ $(document).ready(function(){
     $(".music_btn").on("click",function(){
         if(!music){
             music = true;
+            $(this).text("OFF");
+            $(this).css("color","#ff0000");
+            $(this).css("border-color","#ff0000");
         } else {
             music = false;
+            $(this).text("ON");
+            $(this).css("color","#1216c7");
+            $(this).css("border-color","#1216c7");
         }
     });
 
-    document.addEventListener("DOMContentLoaded", function() {
-        var lazyloadImages = document.querySelectorAll("img.lazy");    
-        var lazyloadThrottleTimeout;
-        
-        function lazyload () {
-          if(lazyloadThrottleTimeout) {
-            clearTimeout(lazyloadThrottleTimeout);
-          }    
-          
-          lazyloadThrottleTimeout = setTimeout(function() {
-              var scrollTop = window.pageYOffset;
-              lazyloadImages.forEach(function(img) {
-                  if(img.offsetTop < (window.innerHeight + scrollTop)) {
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                  }
-              });
-              if(lazyloadImages.length == 0) { 
-                document.removeEventListener("scroll", lazyload);
-                window.removeEventListener("resize", lazyload);
-                window.removeEventListener("orientationChange", lazyload);
-                window.removeEventListener("load", lazyload);
-              }
-          }, 20);
+    $("video").on("click",function(){
+        var on_btn = $(this).siblings(".volume_on");
+        var off_btn = $(this).siblings(".volume_off");
+        if(this.muted){
+            this.muted = false;
+            on_btn.show();
+            on_btn.fadeOut(1000);
+        } else {
+            this.muted = true;
+            off_btn.show();
+            off_btn.fadeOut(1000);
         }
-        
-        document.addEventListener("scroll", lazyload);
-        window.addEventListener("resize", lazyload);
-        window.addEventListener("orientationChange", lazyload);
-        window.addEventListener("load", lazyload);
-      });
+    });
+    $(".mute_all_btn").on("click",function(){
+        var all_off_btn = $(".fixed_box .volume_off");
+        var video = [];
+        video.push($("video"));
+        $.each(video[0],function(index,item){
+            item.muted = true;
+        });
+        all_off_btn.show();
+        all_off_btn.fadeOut(1000);
+    });
 });
