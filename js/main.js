@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var music = false;
-    var audio = new Audio("../media/music/music_1.mp3");
+    var audio = new Audio("../media/music/music_2.mp3");
     audio.loop = true;
     $(".music_btn").on("click",function(){
         if(!music){
