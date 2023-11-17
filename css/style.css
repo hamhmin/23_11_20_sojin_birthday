@@ -5,18 +5,18 @@ html,body{
 body{
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
-.main_body{
-    border:1px solid black;
     max-width: 500px;
-    width: 100vw;
-    height: 100vh;
+    /* overflow: ; */
+    border:1px solid black;
     overflow: scroll;
     position: relative;
+    flex-direction: column;
+    gap: 40px;
+}
+.main_body{
+
 }
 .content_area{
     display: flex;
@@ -28,7 +28,7 @@ body{
 .content_item{
     width: 90%;
 }
-.main_body h1{text-align: center;}
+h1{text-align: center;}
 .music_btn{
     position: fixed;
     top: 20px;
