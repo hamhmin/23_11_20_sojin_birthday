@@ -48,6 +48,14 @@ $(document).ready(function(){
     diff = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
     window.onload = function(){
+        var content_box = [];
+        content_box.push($(".content_item_delay"));
+        $.each(content_box[0],function(index,item){
+            var src = $(this).attr("real-src");
+            $(this).attr("src",src);
+            
+        });
+        $(".content_item_delay").attr("src",$(this).attr("real-src"));
         if(!localStorage.getItem("visit")){
             localStorage.setItem("visit",true);
             alert("자기의 생일을 너무너무 축하해~");
